@@ -1,4 +1,4 @@
-module github.com/duobiex/entity
+module github.com/abmpio/entity
 
 go 1.20
 
