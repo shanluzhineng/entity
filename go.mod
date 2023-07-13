@@ -7,7 +7,7 @@ require (
 	abmp.cc/app v0.0.0-00010101000000-000000000000
 	github.com/abmpio/configurationx v0.0.0-20230614115922-7e2f5818b58d
 	github.com/abmpio/libx v0.0.0-20230625025307-2f8abba069d6
-	github.com/abmpio/mongodbr v0.0.0-20230611075214-8c9508eae6a4
+	github.com/abmpio/mongodbr v0.0.0-20230712120200-57fb87dee66d
 	go.mongodb.org/mongo-driver v1.11.0
 )
 
