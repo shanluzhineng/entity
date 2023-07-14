@@ -5,9 +5,9 @@ go 1.20
 require (
 	abmp.cc/abmp v0.0.0-00010101000000-000000000000
 	abmp.cc/app v0.0.0-00010101000000-000000000000
-	github.com/abmpio/configurationx v0.0.0-20230614115922-7e2f5818b58d
-	github.com/abmpio/libx v0.0.0-20230625025307-2f8abba069d6
-	github.com/abmpio/mongodbr v0.0.0-20230712120200-57fb87dee66d
+	github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462
+	github.com/abmpio/libx v0.0.0-20230703115554-e568c02d8172
+	github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15
 	go.mongodb.org/mongo-driver v1.11.0
 )
 
