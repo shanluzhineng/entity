@@ -6,9 +6,9 @@ require (
 	abmp.cc/abmp v0.0.0-00010101000000-000000000000
 	abmp.cc/app v0.0.0-00010101000000-000000000000
 	github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462
-	github.com/abmpio/libx v0.0.0-20230703115554-e568c02d8172
+	github.com/abmpio/libx v0.0.0-20230718094948-e14819fc67c4
 	github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15
-	go.mongodb.org/mongo-driver v1.11.0
+	go.mongodb.org/mongo-driver v1.12.0
 )
 
 require (
@@ -33,8 +33,8 @@ require (
 	github.com/spf13/viper v1.15.0 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
-	github.com/xdg-go/scram v1.1.1 // indirect
-	github.com/xdg-go/stringprep v1.0.3 // indirect
+	github.com/xdg-go/scram v1.1.2 // indirect
+	github.com/xdg-go/stringprep v1.0.4 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	go.uber.org/multierr v1.9.0 // indirect
