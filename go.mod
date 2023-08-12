@@ -49,6 +49,6 @@ require (
 )
 
 replace (
-	abmp.cc/abmp => ../../../cloudmobile2.0_beta/lib/abmp.core
-	abmp.cc/app => ../../../cloudmobile2.0_beta/lib/abmp.app
+	abmp.cc/abmp => ../abmp.core
+	abmp.cc/app => ../abmp.app
 )
