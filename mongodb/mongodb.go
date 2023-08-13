@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"abmp.cc/abmp/pkg/log"
-	"abmp.cc/app/pkg/app"
-	"abmp.cc/app/pkg/app/web"
+	"github.com/abmpio/abmp/app"
+	"github.com/abmpio/abmp/app/web"
+	"github.com/abmpio/abmp/pkg/log"
 	"github.com/abmpio/configurationx"
 	"github.com/abmpio/configurationx/options/mongodb"
 	"github.com/abmpio/mongodbr"
