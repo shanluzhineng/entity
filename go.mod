@@ -3,10 +3,10 @@ module github.com/abmpio/entity
 go 1.20
 
 require (
-	github.com/abmpio/abmp v0.0.0-00010101000000-000000000000
-	github.com/abmpio/app v0.0.0-00010101000000-000000000000
+	github.com/abmpio/abmp v0.0.0-20230819060034-aa8d5ad8e394
+	github.com/abmpio/app v0.0.0-20231107113850-3cb7968b906e
 	github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462
-	github.com/abmpio/libx v0.0.0-20230731032308-f20ff331bf99
+	github.com/abmpio/libx v0.0.0-20231024112445-2ba78ad12aa0
 	github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15
 	go.mongodb.org/mongo-driver v1.12.1
 )
@@ -45,12 +45,4 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-)
-
-replace (
-	github.com/abmpio/abmp => ../abmp.core
-	github.com/abmpio/app => ../app/app
-	github.com/abmpio/configurationx => ../configurationx
-	github.com/abmpio/libx => ../libx
-	github.com/abmpio/mongodbr => ../mongodbr
 )

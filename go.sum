@@ -38,6 +38,16 @@ cloud.google.com/go/storage v1.14.0/go.mod h1:GrKmX003DSIwi9o29oFT7YDnHYwZoctc3f
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
+github.com/abmpio/abmp v0.0.0-20230819060034-aa8d5ad8e394 h1:CMukszOjbz5dsiNX3qvBsTwwj/nb74kiz8FnONuZRME=
+github.com/abmpio/abmp v0.0.0-20230819060034-aa8d5ad8e394/go.mod h1:WpuvzkADyY4R5L22cvYAxDRYn92uYebeFhC6w20Zoeg=
+github.com/abmpio/app v0.0.0-20231107113850-3cb7968b906e h1:qRX72sDA5G0W9ACD9aeiRhUuX8oU3u2nU5IIPttC/9g=
+github.com/abmpio/app v0.0.0-20231107113850-3cb7968b906e/go.mod h1:oKBHVkZ42/aO/LRi6Z5V24FuAWUurA6kAfODOu9J7iI=
+github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462 h1:5zt2uu46DolnJoMuXXNprSA7qA+4b8lxZghxJIPAcIA=
+github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462/go.mod h1:+dKpgI9DK0dmz83PFE2sKDIbflkKS8o8dQkgnCX3orU=
+github.com/abmpio/libx v0.0.0-20231024112445-2ba78ad12aa0 h1:oAz/n0w8S1QvXfp7GbEy56evxqtwjt0WoX5HD2Dt1Jk=
+github.com/abmpio/libx v0.0.0-20231024112445-2ba78ad12aa0/go.mod h1:1FdlmnwDWa2mTehDyH2JgEozqZv2uTys6LM+PmYRCZg=
+github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15 h1:R9qpa89fqRYFtpc+WeyKVGQZUd+QGX/vlK48xSGkJHw=
+github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15/go.mod h1:BBOoqVKwv+xv3NG/IuZUPMOHuGKf3TkT0yMcbFvBfQI=
 github.com/benbjohnson/clock v1.3.0 h1:ip6w0uFQkncKQ979AypyG0ER7mqUSBdKLOgAle/AT8A=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
