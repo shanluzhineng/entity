@@ -66,6 +66,10 @@ func GetDatabase(clientKey, databaseName string) *Database {
 	return ensureDatabaseRegisted(clientKey, databaseName)
 }
 
+func (d *Database) GetDatabase() *mongo.Database {
+	return d._db
+}
+
 func (d *Database) GetEntityRepositoryOptionMap() map[string][]mongodbr.RepositoryOption {
 	return d._entityRepositoryOptionMap
 }
