@@ -84,6 +84,12 @@ func (d *Database) GetRepository(modelInstance interface{}) mongodbr.IRepository
 }
 
 func (d *Database) ensureCreateRepository(collectionName string, opts ...mongodbr.RepositoryOption) mongodbr.IRepository {
+	if len(d._entityRepositoryOptionMap) > 0 {
+		registedOpts, ok := d._entityRepositoryOptionMap[collectionName]
+		if ok && len(registedOpts) > 0 {
+			opts = append(opts, registedOpts...)
+		}
+	}
 	repository, err := mongodbr.NewRepositoryBase(func() *mongo.Collection {
 		return d._db.Collection(collectionName)
 	}, opts...)
