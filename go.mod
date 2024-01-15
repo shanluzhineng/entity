@@ -3,11 +3,13 @@ module github.com/abmpio/entity
 go 1.20
 
 require (
+	github.com/ReneKroon/ttlcache v1.7.0
 	github.com/abmpio/abmp v0.0.0-20230819060034-aa8d5ad8e394
 	github.com/abmpio/app v0.0.0-20231107113850-3cb7968b906e
 	github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462
 	github.com/abmpio/libx v0.0.0-20231024112445-2ba78ad12aa0
 	github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15
+	github.com/satori/go.uuid v1.2.0
 	go.mongodb.org/mongo-driver v1.12.1
 )
 
@@ -39,6 +41,7 @@ require (
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.25.0 // indirect
 	golang.org/x/crypto v0.12.0 // indirect
+	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
 	golang.org/x/sync v0.3.0 // indirect
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect
