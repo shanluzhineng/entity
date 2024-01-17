@@ -8,8 +8,57 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
+type FieldSpecification struct {
+	TypeIsString bool
+}
+
+type GetFilterQueryOptions struct {
+	SpecificationList map[string]*FieldSpecification
+}
+
+func (o *GetFilterQueryOptions) FieldIsString(fieldName string) bool {
+	if len(o.SpecificationList) <= 0 {
+		return false
+	}
+	specification := o.FieldSpecification(fieldName)
+	if specification == nil {
+		return false
+	}
+	return specification.TypeIsString
+}
+
+func (o *GetFilterQueryOptions) FieldSpecification(fieldName string) *FieldSpecification {
+	specification, ok := o.SpecificationList[fieldName]
+	if !ok {
+		return nil
+	}
+	return specification
+}
+
+type GetFilterQueryOption = func(options *GetFilterQueryOptions)
+
+// force specify field type is string
+func GetFilterQueryOptionWithTypeIsString(fieldName string, fieldIsString bool) GetFilterQueryOption {
+	return func(options *GetFilterQueryOptions) {
+		specification := options.FieldSpecification(fieldName)
+		if specification == nil {
+			options.SpecificationList[fieldName] = &FieldSpecification{
+				TypeIsString: fieldIsString,
+			}
+		} else {
+			specification.TypeIsString = fieldIsString
+		}
+	}
+}
+
 // GetFilter Get entity.Filter
-func GetFilter(getKeyFn func(key string) string) (f *Filter, err error) {
+func GetFilter(getKeyFn func(key string) string, opts ...GetFilterQueryOption) (f *Filter, err error) {
+	options := &GetFilterQueryOptions{
+		SpecificationList: map[string]*FieldSpecification{},
+	}
+	for _, eachOpt := range opts {
+		eachOpt(options)
+	}
 	// bind
 	condStr := getKeyFn(FilterQueryFieldConditions)
 	var conditions []*Condition
@@ -23,6 +72,12 @@ func GetFilter(getKeyFn func(key string) string) (f *Filter, err error) {
 		switch v.Kind() {
 		case reflect.String:
 			item := cond.Value.(string)
+			usedString := options.FieldIsString(cond.Key)
+			if usedString {
+				// used string
+				conditions[i].Value = item
+				continue
+			}
 			// mongodb object id
 			id, err := primitive.ObjectIDFromHex(item)
 			if err == nil {
@@ -57,8 +112,8 @@ func GetFilter(getKeyFn func(key string) string) (f *Filter, err error) {
 }
 
 // GetFilterQuery Get bson.M
-func GetFilterQuery(getKeyFn func(key string) string) (q map[string]interface{}, err error) {
-	f, err := GetFilter(getKeyFn)
+func GetFilterQuery(getKeyFn func(key string) string, opts ...GetFilterQueryOption) (q map[string]interface{}, err error) {
+	f, err := GetFilter(getKeyFn, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -72,8 +127,8 @@ func GetFilterQuery(getKeyFn func(key string) string) (q map[string]interface{},
 	return FilterToQuery(f)
 }
 
-func MustGetFilterQuery(getKeyFn func(key string) string) (q map[string]interface{}) {
-	q, err := GetFilterQuery(getKeyFn)
+func MustGetFilterQuery(getKeyFn func(key string) string, opts ...GetFilterQueryOption) (q map[string]interface{}) {
+	q, err := GetFilterQuery(getKeyFn, opts...)
 	if err != nil {
 		return nil
 	}
