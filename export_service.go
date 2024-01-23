@@ -29,9 +29,10 @@ type ExportOptions struct {
 	Filter interface{} `json:"filter"`
 	Async  bool        `json:"async"`
 
-	GetFieldNameFunc func(entity interface{}, name string) string `json:"-"`
-	Skip             int                                          `json:"skip"`
-	FieldNameMap     map[string]string                            `json:"fieldNameMap"`
+	GetFieldNameFunc  func(entity interface{}, name string) string `json:"-"`
+	Skip              int                                          `json:"skip"`
+	FieldNameList     []string                                     `json:"fieldNameList"`
+	FieldNameTitleMap map[string]string                            `json:"fieldNameTitleMap"`
 }
 
 const (
@@ -265,9 +266,16 @@ func (s *EntityExportService[T]) getCsvWriter(export *EntityExport) (csvWriter *
 }
 
 func (s *EntityExportService[T]) mapColumns(export *EntityExport) (columns []tuple.T2[string, string], err error) {
-	if len(export.FieldNameMap) > 0 {
-		for eachName, eachTitle := range export.FieldNameMap {
-			columns = append(columns, tuple.New2(eachName, eachTitle))
+	if len(export.FieldNameList) > 0 {
+		for _, eachColumn := range export.FieldNameList {
+			columnTitle := eachColumn
+			if export.FieldNameTitleMap != nil && len(export.FieldNameTitleMap) > 0 {
+				columnTitleMap, ok := export.FieldNameTitleMap[eachColumn]
+				if ok && len(columnTitle) > 0 {
+					columnTitle = columnTitleMap
+				}
+			}
+			columns = append(columns, tuple.New2(eachColumn, columnTitle))
 		}
 		return columns, nil
 	}
