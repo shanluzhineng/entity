@@ -20,3 +20,11 @@ func (p *EntityWithTenant) GetTenantId() string {
 }
 
 // #endregion
+
+func CheckEntityIsIEntityWithTenant(entityValue interface{}) IEntityWithTenant {
+	v, ok := entityValue.(IEntityWithTenant)
+	if !ok {
+		return nil
+	}
+	return v
+}

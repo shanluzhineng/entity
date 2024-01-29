@@ -22,3 +22,11 @@ func (p *EntityWithUser) GetCreatorId() string {
 }
 
 // #endregion
+
+func CheckEntityIsIEntityWithUser(entityValue interface{}) IEntityWithUser {
+	v, ok := entityValue.(IEntityWithUser)
+	if !ok {
+		return nil
+	}
+	return v
+}
