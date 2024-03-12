@@ -1,5 +1,7 @@
 package filter
 
+import "strings"
+
 // FilterToQuery Translate entity.Filter to bson.M
 func FilterToQuery(f IFilter) (q map[string]interface{}, err error) {
 	if f == nil || f.IsNil() {
@@ -27,7 +29,8 @@ func FilterToQuery(f IFilter) (q map[string]interface{}, err error) {
 		case FilterOpNotEqual:
 			q[key] = map[string]interface{}{"$ne": value}
 		case FilterOpContains, FilterOpRegex, FilterOpSearch:
-			q[key] = map[string]interface{}{"$regex": value, "$options": "i"}
+			regexV := handlerRegexValue(value)
+			q[key] = map[string]interface{}{"$regex": regexV, "$options": "i"}
 		case FilterOpNotContains:
 			q[key] = map[string]interface{}{"$not": map[string]interface{}{"$regex": value}}
 		case FilterOpIn:
@@ -47,4 +50,13 @@ func FilterToQuery(f IFilter) (q map[string]interface{}, err error) {
 		}
 	}
 	return q, nil
+}
+
+func handlerRegexValue(v interface{}) interface{} {
+	s, ok := v.(string)
+	if !ok {
+		return v
+	}
+	s = strings.ReplaceAll(s, "+", "\\+")
+	return s
 }
