@@ -1,6 +1,6 @@
 package entity
 
-import "github.com/abmpio/mongodbr"
+import "github.com/shanluzhineng/mongodbr"
 
 type IEntityWithUser interface {
 	SetUserCreator(userId string)

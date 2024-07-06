@@ -3,7 +3,7 @@ package mongodb
 import (
 	"fmt"
 
-	"github.com/abmpio/mongodbr"
+	"github.com/shanluzhineng/mongodbr"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

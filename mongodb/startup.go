@@ -1,7 +1,7 @@
 package mongodb
 
 import (
-	"github.com/abmpio/app/web"
+	"github.com/shanluzhineng/app/web"
 )
 
 func init() {

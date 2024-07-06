@@ -1,6 +1,6 @@
 package entity
 
-import "github.com/abmpio/mongodbr"
+import "github.com/shanluzhineng/mongodbr"
 
 func EntityWithCreatorUserId(userId string) mongodbr.EntityOption {
 	return func(e mongodbr.IEntity) {

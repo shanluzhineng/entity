@@ -1,15 +1,15 @@
-module github.com/abmpio/entity
+module github.com/shanluzhineng/entity
 
 go 1.20
 
 require (
 	github.com/ReneKroon/ttlcache v1.7.0
-	github.com/abmpio/abmp v0.0.0-20230819060034-aa8d5ad8e394
-	github.com/abmpio/app v0.0.0-20231107113850-3cb7968b906e
-	github.com/abmpio/configurationx v0.0.0-20230713072959-39c660b4f462
-	github.com/abmpio/libx v0.0.0-20231024112445-2ba78ad12aa0
-	github.com/abmpio/mongodbr v0.0.0-20230713130758-03f7f55fbe15
 	github.com/satori/go.uuid v1.2.0
+	github.com/shanluzhineng/abmp v0.0.1
+	github.com/shanluzhineng/app v0.0.2
+	github.com/shanluzhineng/configurationx v0.0.1
+	github.com/shanluzhineng/libx v0.0.1
+	github.com/shanluzhineng/mongodbr v0.0.1
 	go.mongodb.org/mongo-driver v1.12.1
 )
 
